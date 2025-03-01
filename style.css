@@ -27,8 +27,15 @@
     background-color: white;
 }
 
+.buttons{
+    gap: 10px;
+}
+
 .numbers{
     flex-grow: 1;
     flex-wrap: wrap;
 }
 
+.operators{
+    width: 25px;
+}
