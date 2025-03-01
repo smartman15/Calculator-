@@ -2,8 +2,25 @@
     display: flex;
 }
 
+.direction-column{
+    flex-direction: column;
+}
+
 .calculator-base{
     width: 250px;
     height: 500px;
     background-color: black;
+    padding: 10px;
+}
+
+.display{
+    flex-basis: 50px;
+    background-color: white;
+    
+}
+
+.number{
+    width: 25px;
+    height: 25px;
+    background-color: white;
 }
