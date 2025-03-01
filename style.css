@@ -24,6 +24,7 @@
 .number,
 .operator{
     flex-basis: 25px;
+    margin: 2px;
     background-color: white;
 }
 
