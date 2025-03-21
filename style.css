@@ -33,6 +33,12 @@
     gap: 10px;
 }
 
+.clear{
+    flex-basis: 30px;
+    background-color: white;
+    text-align: center;
+}
+
 .numbers{
     flex-grow: 1;
     flex-wrap: wrap;
