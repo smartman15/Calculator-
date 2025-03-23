@@ -35,3 +35,12 @@ function operate(num1, num2, operator){
 
 
 let num1, num2, operator;
+let menu = document.querySelector(".container.buttons");
+
+menu.addEventListener('click', (event) =>{
+    let target = event.target;
+
+    if(target.classList.contains("number")){
+        console.log("number was clicked");
+    }
+});
