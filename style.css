@@ -29,6 +29,11 @@
     background-color: white;
 }
 
+.first-row,
+.second-row{
+    flex-grow: 1;
+}
+
 .buttons{
     gap: 10px;
 }
@@ -41,7 +46,7 @@
 
 .numbers{
     flex-grow: 1;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .operators{
