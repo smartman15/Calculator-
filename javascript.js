@@ -50,7 +50,13 @@ menu.addEventListener('click', (event) =>{
         console.log(num2);
     }
     else if(target.classList.contains("operator")){
-        console.log("operator was clicked");
+        if(target.textContent == "="){
+            result = operate(num1, num2, operator);
+        }
+        else{
+            operator = target.textContent;
+        }
+        
     }
     else if(target.classList.contains("clear")){
         console.log("clear button was clicked");
