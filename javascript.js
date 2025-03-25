@@ -34,14 +34,20 @@ function operate(num1, num2, operator){
 }
 
 
-let num1, num2, operator;
+let num1 = null, num2 = null, operator = null;
 let menu = document.querySelector(".calculator-base");
 
 menu.addEventListener('click', (event) =>{
     let target = event.target;
 
     if(target.classList.contains("number")){
-        console.log("number was clicked");
+        if(num1 == null){
+            num1 = Number(target.textContent);
+        }
+        else if(num2 == null){
+            num2 = Number(target.textContent);
+        }
+        console.log(num2);
     }
     else if(target.classList.contains("operator")){
         console.log("operator was clicked");
