@@ -15,26 +15,28 @@ function divide(a, b){
 }
 
 function operate(num1, num2, operator){
+    let result;
     switch(operator){
         case '+':
-            add(num1, num2);
+            result = add(num1, num2);
             break;
         case '-':
-            substract(num1, num2);
+            result = substract(num1, num2);
             break;
         case '*':
-            multiply(num1, num2);
+            result = multiply(num1, num2);
             break;
         case '/':
-            divide(num1, num2);
+            result = divide(num1, num2);
             break;
         default:
             console.log('error');
     }
+    return result;
 }
 
 
-let num1 = null, num2 = null, operator = null;
+let num1 = null, num2 = null, operator = null, result;
 let menu = document.querySelector(".calculator-base");
 
 menu.addEventListener('click', (event) =>{
