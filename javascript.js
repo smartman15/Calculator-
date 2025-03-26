@@ -56,8 +56,12 @@ menu.addEventListener('click', (event) =>{
         }
     }
     else if(target.classList.contains("operator")){
+        // after pressing =, set num1 to result to use for next operations
+        // empty num2
         if(target.textContent == "="){
             result = operate(Number(num1), Number(num2), operator);
+            num1 = result;
+            num2 = "";
             display.textContent = result;
         }
         else{
