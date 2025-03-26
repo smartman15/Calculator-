@@ -55,6 +55,7 @@ menu.addEventListener('click', (event) =>{
             display.textContent = num2;
         }
     }
+
     else if(target.classList.contains("operator")){
         // after pressing =, set num1 to result to use for next operations
         // empty num2
@@ -75,6 +76,7 @@ menu.addEventListener('click', (event) =>{
         
     }
     else if(target.classList.contains("clear")){
-        console.log("clear button was clicked");
+        num1 = num2 = operator = "";
+        display.textContent = "";
     }
 });
