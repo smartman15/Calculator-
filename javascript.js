@@ -37,6 +37,7 @@ function operate(num1, num2, operator){
 }
 
 
+
 let num1 = "", num2 = "", operator = "", result;
 let menu = document.querySelector(".calculator-base");
 let display = document.querySelector("div.display");
@@ -45,9 +46,17 @@ menu.addEventListener('click', (event) =>{
     let target = event.target;
 
     if(target.classList.contains("number")){
+        // When a result is displayed, pressing 
+        // a new digit should clear the result and start a new calculation 
+        // instead of appending the digit to the existing result.
+        if(display.textContent == String(result)){
+            num1 = target.textContent;
+            display.textContent = num1;
+        }
+
         // if operator hasnt been pressed yet, assign number to num1
         // else, assign number to num2
-        if(operator == ""){
+        else if(operator == ""){
             num1 += target.textContent;
             display.textContent = num1;
         }
@@ -75,19 +84,22 @@ menu.addEventListener('click', (event) =>{
                 else{
                     num1 = result;
                     num2 = "";
-                    display.textContent = Math.round(result);
+                    result = Math.round(result);
+                    display.textContent = result;
                 }
                 
             }
 
             
         }
+
         else{
             operator = target.textContent;
             display.textContent = operator;
         }
         
     }
+
     else if(target.classList.contains("clear")){
         num1 = num2 = operator = "";
         display.textContent = "";
