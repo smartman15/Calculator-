@@ -62,7 +62,7 @@ menu.addEventListener('click', (event) =>{
             result = operate(Number(num1), Number(num2), operator);
             num1 = result;
             num2 = "";
-            display.textContent = result;
+            display.textContent = Math.round(result);
         }
         else{
             operator = target.textContent;
