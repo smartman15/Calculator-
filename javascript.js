@@ -36,7 +36,7 @@ function operate(num1, num2, operator){
 }
 
 
-let num1 = null, num2 = null, operator = null, result;
+let num1 = "", num2 = "", operator = "", result;
 let menu = document.querySelector(".calculator-base");
 let display = document.querySelector("div.display");
 
@@ -44,18 +44,20 @@ menu.addEventListener('click', (event) =>{
     let target = event.target;
 
     if(target.classList.contains("number")){
-        if(num1 == null){
-            num1 = Number(target.textContent);
+        // if operator hasnt been pressed yet, assign number to num1
+        // else, assign number to num2
+        if(operator == ""){
+            num1 += target.textContent;
             display.textContent = num1;
         }
-        else if(num2 == null){
-            num2 = Number(target.textContent);
+        else{
+            num2 += target.textContent;
             display.textContent = num2;
         }
     }
     else if(target.classList.contains("operator")){
         if(target.textContent == "="){
-            result = operate(num1, num2, operator);
+            result = operate(Number(num1), Number(num2), operator);
             display.textContent = result;
         }
         else{
