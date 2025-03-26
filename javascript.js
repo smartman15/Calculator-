@@ -11,7 +11,8 @@ function multiply(a, b){
 }
 
 function divide(a, b){
-    return a / b;
+    if(b == 0) return "Don't divide by 0!!"
+    else return a / b;
 }
 
 function operate(num1, num2, operator){
@@ -62,9 +63,21 @@ menu.addEventListener('click', (event) =>{
         if(target.textContent == "="){
             if(num1 != "" && num2 != "" && operator != ""){
                 result = operate(Number(num1), Number(num2), operator);
-                num1 = result;
-                num2 = "";
-                display.textContent = Math.round(result);
+                
+                // if result is a string (due to division by 0, display error)
+                if(typeof result == "string"){
+                    num1 = "";
+                    num2 = "";
+                    display.textContent = result;
+                }
+
+                // else, do calculations like normal
+                else{
+                    num1 = result;
+                    num2 = "";
+                    display.textContent = Math.round(result);
+                }
+                
             }
 
             
