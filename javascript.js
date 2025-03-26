@@ -84,7 +84,7 @@ menu.addEventListener('click', (event) =>{
                 else{
                     num1 = result;
                     num2 = "";
-                    result = Math.round(result);
+                    result = Math.round(result * 100) / 100;
                     display.textContent = result;
                 }
                 
